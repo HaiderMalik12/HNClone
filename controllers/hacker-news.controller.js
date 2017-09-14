@@ -1,4 +1,6 @@
 const Article = require('../models/article.model');
+import _ from 'lodash';
+import {convertToUserFriendly} from '../services/util.service';
 
 /**
  * Get all the Articles from the local mongodb database
@@ -9,12 +11,19 @@ const Article = require('../models/article.model');
  */
 function getArticles(req, res, next) {
 
-
     Article.find()
         .populate('author')
         .populate('story')
         .sort({date_created: -1})
-        .then(articles => res.json(articles))
+        .then(articles => {
+            const _articles = articles.map(article => {
+                let _a = _.cloneDeep(article);
+                _a.date_created_friendly = convertToUserFriendly(article.date_created);
+                return _a;
+            });
+
+            return res.json(_articles);
+        })
         .catch(err => next(err));
 
 }

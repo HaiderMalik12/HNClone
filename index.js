@@ -23,15 +23,15 @@ mongoose.connect(mongoUri, {server: {socketOptions: {keepAlive: 1}}}).then(
     () => {
 
         //TODO://Disable this code while pushing code to github
-        // saveArticles()
-        //   .then(articles => {
-        //     if (articles.length) {
-        //       console.info(`${articles.length} Articles fetched from the HackerNews Api and saved to MongodDB`);
-        //     }
-        //   })
-        //   .catch(err => {
-        //     throw err
-        //   })
+        /**saveArticles()
+         .then(articles => {
+            if (articles.length) {
+              console.info(`${articles.length} Articles fetched from the HackerNews Api and saved to MongodDB`);
+            }
+          })
+         .catch(err => {
+            throw err
+          })*/
     },
     err => {
         throw err;
@@ -54,7 +54,7 @@ if (!module.parent) {
     // listen on port config.port
     app.listen(config.port, () => {
         console.info(`server started on port ${config.port} (${config.env})`); // eslint-disable-line no-console
-        cron.schedule('*/60 * * * *', function(){
+        cron.schedule('*/60 * * * *', function () {
             saveArticles()
                 .then(articles => {
                     if (articles.length) {

@@ -19,7 +19,10 @@ const ArticleSchema = new mongoose.Schema({
     },
     story: {
         type: Schema.Types.ObjectId, ref: 'Story'
+    },
+    date_created_friendly: {
+        type: String
     }
 });
 
-module.exports =  mongoose.model('Article', ArticleSchema);
+module.exports = mongoose.model('Article', ArticleSchema);
