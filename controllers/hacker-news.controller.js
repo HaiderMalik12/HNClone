@@ -23,7 +23,7 @@ function getArticles(req, res, next) {
             });
 
             return res.render('home', {
-                title: 'Home'
+                title: 'HN Feed'
             });
         })
         .catch(err => next(err));
