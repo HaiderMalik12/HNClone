@@ -1,28 +1,29 @@
 extends layout
 
 block content
-         .container-fluid
-          table.table.table-hover
+    .container-fluid
+        table.table.table-hover
             tbody
-              tr
-                td This Story title Man. I am the owener of thi Repo
-                td 11 am
-                td
-                  a(href='#')
-                    i.fa.fa-trash
-              tr
-                td This Story title Man. I am the owener of thi Repo
-                td 12 pm
-                td
-                  a(href='#')
-                    i.fa.fa-trash
-              tr
-                td This Story title Man. I am the owener of thi Repo
-                  td 12 pm
-                  td
-                   a(href='#')
-                    i.fa.fa-trash
-                    p #{articles.length}
+                for article in articles
+                    tr
+                        td #{article.title}
+                        td #{article.date_created_friendly}
+                        td
+                            a(href='#')
+                                i.fa.fa-trash
+                //tr
+                //    td This Story title Man. I am the owener of thi Repo
+                //    td 12 pm
+                //    td
+                //        a(href='#')
+                //            i.fa.fa-trash
+                //tr
+                //    td This Story title Man. I am the owener of thi Repo
+                //        td 12 pm
+                //        td
+                //            a(href='#')
+                //                i.fa.fa-trash
+                //                //p #{articles.length}
 
 
 

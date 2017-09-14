@@ -24,8 +24,9 @@ function getArticles(req, res, next) {
 
             return res.render('home', {
                 title: 'HN Feed',
-                articles: articles
+                articles: _articles
             });
+
         })
         .catch(err => next(err));
 

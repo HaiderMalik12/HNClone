@@ -23,15 +23,15 @@ mongoose.connect(mongoUri, {server: {socketOptions: {keepAlive: 1}}}).then(
     () => {
 
         //TODO://Disable this code while pushing code to github
-        /**saveArticles()
-         .then(articles => {
-            if (articles.length) {
-              console.info(`${articles.length} Articles fetched from the HackerNews Api and saved to MongodDB`);
-            }
-          })
-         .catch(err => {
-            throw err
-          })*/
+        // saveArticles()
+        //  .then(articles => {
+        //     if (articles.length) {
+        //       console.info(`${articles.length} Articles fetched from the HackerNews Api and saved to MongodDB`);
+        //     }
+        //   })
+        //  .catch(err => {
+        //     throw err
+        //   })
     },
     err => {
         throw err;
