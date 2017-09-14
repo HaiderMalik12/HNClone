@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const dotenv = require('dotenv');
 const rootPath = require('get-root-path').rootPath;
+import config from './config';
 
 // Load environment variables from .env file
 dotenv.load();
@@ -30,7 +31,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(methodOverride('_method'));
-app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
+app.use(session({ secret: config.jwtSecret, resave: true, saveUninitialized: true }));
 app.use(flash());
 app.use(express.static(path.join(rootPath, '/public')));
 
