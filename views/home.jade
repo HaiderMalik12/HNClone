@@ -6,25 +6,13 @@ block content
             tbody
                 for article in articles
                     tr
-                        td #{article.title}
+                        if !article.title
+                            td #{article.story.story_title}
+                        else
+                            td #{article.title}
                         td #{article.date_created_friendly}
                         td
                             a(href='#')
                                 i.fa.fa-trash
-                //tr
-                //    td This Story title Man. I am the owener of thi Repo
-                //    td 12 pm
-                //    td
-                //        a(href='#')
-                //            i.fa.fa-trash
-                //tr
-                //    td This Story title Man. I am the owener of thi Repo
-                //        td 12 pm
-                //        td
-                //            a(href='#')
-                //                i.fa.fa-trash
-                //                //p #{articles.length}
-
-
 
 
