@@ -16,7 +16,7 @@ import config from './config';
 dotenv.load();
 
 //routes
-const routes = require('../routes/index');
+const routes = require('../routes/hacker-news-routes');
 
 const app = express();
 

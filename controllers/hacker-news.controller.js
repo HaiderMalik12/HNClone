@@ -22,7 +22,9 @@ function getArticles(req, res, next) {
                 return _a;
             });
 
-            return res.json(_articles);
+            return res.render('home', {
+                title: 'Home'
+            });
         })
         .catch(err => next(err));
 

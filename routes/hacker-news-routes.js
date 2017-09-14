@@ -3,10 +3,10 @@ const HackerNewsCtrl = require('../controllers/hacker-news.controller');
 
 const router = express.Router();
 
-router.route('/articles')
+router.route('/')
     .get(HackerNewsCtrl.getArticles);
 
-router.route('/articles')
+router.route('/')
     .delete(HackerNewsCtrl.deleteArticle);
 
 
