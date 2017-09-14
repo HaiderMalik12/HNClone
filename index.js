@@ -54,7 +54,7 @@ if (!module.parent) {
     // listen on port config.port
     app.listen(config.port, () => {
         console.info(`server started on port ${config.port} (${config.env})`); // eslint-disable-line no-console
-        cron.schedule('*/60 * * * *', function () {
+        cron.schedule('0 * * * *', function () {
             saveArticles()
                 .then(articles => {
                     if (articles.length) {
