@@ -19,8 +19,6 @@ mongoose.Promise = Promise;
 
 // connect to mongo db
 const mongoUri = config.mongo.host;
-// mongoose.connect(mongoUri, { server: { socketOptions: { keepAlive: 1 } } });
-
 mongoose.connect(mongoUri, {server: {socketOptions: {keepAlive: 1}}}).then(
     () => {
 
@@ -56,7 +54,7 @@ if (!module.parent) {
     // listen on port config.port
     app.listen(config.port, () => {
         console.info(`server started on port ${config.port} (${config.env})`); // eslint-disable-line no-console
-        cron.schedule('* * 1 * *', function(){
+        cron.schedule('*/60 * * * *', function(){
             saveArticles()
                 .then(articles => {
                     if (articles.length) {
