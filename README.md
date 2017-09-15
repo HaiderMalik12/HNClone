@@ -13,7 +13,7 @@
 ## Setup
 
 
-###1. Install the Dependencies
+### 1. Install the Dependencies
 ```bash
 npm install
 ```
