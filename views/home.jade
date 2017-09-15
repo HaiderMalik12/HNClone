@@ -19,5 +19,5 @@ block content
                         td
                             span.custom-content #{article.date_created_friendly}
                         td
-                            form(action='/#{article._id}', method='post')
+                            form(action='/#{article._id}', method='get')
                                 button.fa.fa-trash(type='submit')
