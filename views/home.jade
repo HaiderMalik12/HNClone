@@ -1,7 +1,5 @@
 extends layout
 
-.script
-    - notie.alert({ text: 'Article is deleted successfully!' , type:1})
 block content
     .container-fluid
         table.table.table-hover
@@ -15,11 +13,9 @@ block content
                                         span.author-color #{article.author.name} -
                         else
                             td
-                                a.no-underline(href=article.title, target="_blank")
+                                a.no-underline(href=article.url, target="_blank")
                                     span.custom-content #{article.title}
                                         span.author-color #{article.author.name} -
-
-                                //a(href=article.title, target="_blank") #{article.title}
                         td
                             span.custom-content #{article.date_created_friendly}
                         td
