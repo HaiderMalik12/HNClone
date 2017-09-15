@@ -7,7 +7,7 @@ router.route('/')
     .get(HackerNewsCtrl.getArticles);
 
 router.route('/:id')
-    .delete(HackerNewsCtrl.deleteArticle);
+    .post(HackerNewsCtrl.deleteArticle);
 
 
 module.exports = router;

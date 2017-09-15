@@ -32,6 +32,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(methodOverride('_method'));
 app.use(session({ secret: config.jwtSecret, resave: true, saveUninitialized: true }));
+app.use(function(req,res,next){
+    res.locals.session = req.session;
+    next();
+});
 app.use(flash());
 app.use(express.static(path.join(rootPath, '/public')));
 

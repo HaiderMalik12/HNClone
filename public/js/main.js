@@ -1,3 +1,3 @@
 $(function() {
-  // Your custom JavaScript goes here
+    // notie.alert({ text: 'Article is deleted successfully!' , type:1})
 });

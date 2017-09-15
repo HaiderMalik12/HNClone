@@ -46,7 +46,9 @@ function deleteArticle(req, res, next) {
     }
 
     Article.findByIdAndRemove(articleId)
-        .then(results => res.json(results))
+        .then(article => {
+            res.redirect("/");
+        })
         .catch(err => next(err));
 
 }

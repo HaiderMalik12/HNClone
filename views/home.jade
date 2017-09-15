@@ -1,5 +1,7 @@
 extends layout
 
+.script
+    - notie.alert({ text: 'Article is deleted successfully!' , type:1})
 block content
     .container-fluid
         table.table.table-hover
@@ -7,14 +9,17 @@ block content
                 for article in articles
                     tr
                         if !article.title
-                            td
-                                a(href=article.story.story_url, target="_blank") #{article.story.story_title}
+                            td #{article.story.story_title} - &nbsp;
+                             span.badge.badge-default #{article.author.name}
+
+                                //a(href=article.story.story_url, target="_blank") #{article.story.story_title}
+                                //  p=article.author.name
                         else
-                            td
-                                a(href=article.title, target="_blank") #{article.title}
+                            td #{article.title} - &nbsp;
+                                span.badge.badge-default #{article.author.name}
+
+                                //a(href=article.title, target="_blank") #{article.title}
                         td #{article.date_created_friendly}
                         td
-                            a(href=article.id)
-                                i.fa.fa-trash
-
-
+                            form(action='/#{article._id}', method='post')
+                                button.fa.fa-trash(type='submit')
