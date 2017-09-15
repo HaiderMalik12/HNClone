@@ -61,3 +61,6 @@ export async function saveArticles() {
 
     return await Promise.all(promises);
 }
+
+
+//https://stackoverflow.com/questions/36467178/deleting-an-entry-through-a-button-click-using-mongoldb-mongoose-jade-and-expr

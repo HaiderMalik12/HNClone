@@ -7,9 +7,11 @@ block content
                 for article in articles
                     tr
                         if !article.title
-                            td #{article.story.story_title}
+                            td
+                                a(href=article.story.story_url, target="_blank") #{article.story.story_title}
                         else
-                            td #{article.title}
+                            td
+                                a(href=article.title, target="_blank") #{article.title}
                         td #{article.date_created_friendly}
                         td
                             a(href='#')
