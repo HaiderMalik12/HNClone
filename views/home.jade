@@ -7,17 +7,17 @@ block content
         table.table.table-hover
             tbody
                 for article in articles
-                    tr
+                    tr.normal-row
                         if !article.title
                             td
-                                span.custom-content #{article.story.story_title} - &nbsp;
-                                    span.author-color #{article.author.name}
-
-                                    //a(href=article.story.story_url, target="_blank") #{article.story.story_title}
-                                    //  p=article.author.name
+                                a.no-underline(href=article.story.story_url, target="_blank")
+                                    span.custom-content #{article.story.story_title} - &nbsp;
+                                        span.author-color #{article.author.name} -
                         else
-                            td #{article.title} - &nbsp;
-                                span.author-color #{article.author.name}
+                            td
+                                a.no-underline(href=article.title, target="_blank")
+                                    span.custom-content #{article.title}
+                                        span.author-color #{article.author.name} -
 
                                 //a(href=article.title, target="_blank") #{article.title}
                         td

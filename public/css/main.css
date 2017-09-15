@@ -11,3 +11,10 @@
   color: #333;
   font-size:13pt
 }
+.mouse-over-row{
+  color: #fafafa
+}
+
+a.no-underline:link {
+  text-decoration: none;
+}
