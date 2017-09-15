@@ -9,17 +9,19 @@ block content
                 for article in articles
                     tr
                         if !article.title
-                            td #{article.story.story_title} - &nbsp;
-                             span.badge.badge-default #{article.author.name}
+                            td
+                                span.custom-content #{article.story.story_title} - &nbsp;
+                                    span.author-color #{article.author.name}
 
-                                //a(href=article.story.story_url, target="_blank") #{article.story.story_title}
-                                //  p=article.author.name
+                                    //a(href=article.story.story_url, target="_blank") #{article.story.story_title}
+                                    //  p=article.author.name
                         else
                             td #{article.title} - &nbsp;
-                                span.badge.badge-default #{article.author.name}
+                                span.author-color #{article.author.name}
 
                                 //a(href=article.title, target="_blank") #{article.title}
-                        td #{article.date_created_friendly}
+                        td
+                            span.custom-content #{article.date_created_friendly}
                         td
                             form(action='/#{article._id}', method='post')
                                 button.fa.fa-trash(type='submit')
