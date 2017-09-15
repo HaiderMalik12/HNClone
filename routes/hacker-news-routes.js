@@ -6,7 +6,7 @@ const router = express.Router();
 router.route('/')
     .get(HackerNewsCtrl.getArticles);
 
-router.route('/')
+router.route('/:id')
     .delete(HackerNewsCtrl.deleteArticle);
 
 

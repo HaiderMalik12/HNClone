@@ -40,7 +40,7 @@ function getArticles(req, res, next) {
  */
 function deleteArticle(req, res, next) {
 
-    let articleId = req.body.id;
+    let articleId = req.params.id;
     if (!articleId) {
         return res.status(400).json({err: 'article id is missing'});
     }
