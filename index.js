@@ -21,17 +21,17 @@ mongoose.Promise = Promise;
 const mongoUri = config.mongo.host;
 mongoose.connect(mongoUri, {server: {socketOptions: {keepAlive: 1}}}).then(
     () => {
-
-        //TODO://Disable this code while pushing code to github
-        // saveArticles()
-        //  .then(articles => {
-        //     if (articles.length) {
-        //       console.info(`${articles.length} Articles fetched from the HackerNews Api and saved to MongodDB`);
-        //     }
-        //   })
-        //  .catch(err => {
-        //     throw err
-        //   })
+       //It will run the first time when you load the application
+        //It will save some articles to your local mongodb database
+        saveArticles()
+         .then(articles => {
+            if (articles.length) {
+              console.info(`${articles.length} Articles fetched from the HackerNews Api and saved to MongodDB`);
+            }
+          })
+         .catch(err => {
+            throw err
+          })
     },
     err => {
         throw err;
