@@ -18,7 +18,7 @@
 npm install
 ```
 
-###2. Run the Mongodb
+### 2. Run the Mongodb
 
 Open your terminal and run this command
 
@@ -26,7 +26,7 @@ Open your terminal and run this command
 monogd
 ```
 
-###3. Create database in Mongodb
+### 3. Create database in Mongodb
 
 Open another tab in a terminal and run these commands
 
@@ -38,7 +38,7 @@ monogo
 use hn_db
 ```
 
-###4. Run the App
+### 4. Run the App
 
 ```bash
 npm start
